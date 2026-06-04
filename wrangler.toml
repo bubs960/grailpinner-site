@@ -22,7 +22,7 @@ binding = "ASSETS"
 # Create via: wrangler kv namespace create GP_KV
 [[kv_namespaces]]
 binding = "GP_KV"
-id = "TBD-kv-namespace-id"
+id = "81c7da102bea4362918fb0b5ec3c5b3a"
 
 # OpenNext incremental cache binding.
 # Binding name is FORCED to NEXT_INC_CACHE_KV by @opennextjs/cloudflare's
@@ -30,7 +30,7 @@ id = "TBD-kv-namespace-id"
 # Points to the same namespace as GP_KV; cache keys prefixed with "isr-cache:".
 [[kv_namespaces]]
 binding = "NEXT_INC_CACHE_KV"
-id = "TBD-kv-namespace-id"
+id = "81c7da102bea4362918fb0b5ec3c5b3a"
 
 # OpenNext ISR background revalidation queue.
 # Create via: wrangler queues create grailpinner-isr-revalidate
