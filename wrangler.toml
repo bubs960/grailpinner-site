@@ -8,7 +8,7 @@ main = ".open-next/worker.js"
 compatibility_date = "2025-09-15"
 compatibility_flags = ["nodejs_compat", "enable_nodejs_process_v2"]
 
-# account_id = "TBD -- set after new CF account is created"
+account_id = "64166b610fc81c1cc544767bef97baf5"
 
 [observability]
 enabled = true
