@@ -1,0 +1,56 @@
+# CF account TBD -- deploy after new account setup
+# Replace all placeholder IDs (TBD-*) with real values after CF account is provisioned.
+# Create KV namespace: wrangler kv namespace create GP_KV
+# Create queues:       wrangler queues create grailpinner-isr-revalidate
+
+name = "grailpinner-site"
+main = ".open-next/worker.js"
+compatibility_date = "2025-09-15"
+compatibility_flags = ["nodejs_compat", "enable_nodejs_process_v2"]
+
+# account_id = "TBD -- set after new CF account is created"
+
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+# KV namespace for pro features + ISR cache
+# Create via: wrangler kv namespace create GP_KV
+[[kv_namespaces]]
+binding = "GP_KV"
+id = "TBD-kv-namespace-id"
+
+# OpenNext incremental cache binding.
+# Binding name is FORCED to NEXT_INC_CACHE_KV by @opennextjs/cloudflare's
+# kv-incremental-cache module; do not rename.
+# Points to the same namespace as GP_KV; cache keys prefixed with "isr-cache:".
+[[kv_namespaces]]
+binding = "NEXT_INC_CACHE_KV"
+id = "TBD-kv-namespace-id"
+
+# OpenNext ISR background revalidation queue.
+# Create via: wrangler queues create grailpinner-isr-revalidate
+[[queues.producers]]
+queue = "grailpinner-isr-revalidate"
+binding = "NEXT_CACHE_REVALIDATION_QUEUE"
+
+[[queues.consumers]]
+queue = "grailpinner-isr-revalidate"
+max_batch_size = 10
+max_batch_timeout = 5
+
+# Non-secret vars. Secrets (CLERK_SECRET_KEY, CLERK_WEBHOOK_SECRET) are
+# set via `wrangler secret put` and live encrypted on CF infra.
+[vars]
+NEXT_INC_CACHE_KV_PREFIX = "isr-cache"
+NEXT_PUBLIC_CLERK_SIGN_IN_URL = "/sign-in"
+NEXT_PUBLIC_CLERK_SIGN_UP_URL = "/sign-up"
+NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL = "/app"
+NEXT_PUBLIC_CLERK_SIGN_UP_FORCE_REDIRECT_URL = "/app"
+
+[triggers]
+crons = []

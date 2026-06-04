@@ -1,0 +1,35 @@
+{
+  "name": "grailpinner-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "npx --yes cross-env NODE_OPTIONS=--max-old-space-size=4096 next build",
+    "start": "next start",
+    "lint": "next lint",
+    "build:cf": "npx --yes cross-env NODE_OPTIONS=--max-old-space-size=4096 npx @opennextjs/cloudflare build",
+    "deploy": "npx --yes cross-env NODE_OPTIONS=--max-old-space-size=4096 npx @opennextjs/cloudflare build && wrangler deploy"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^6.0.0",
+    "@tailwindcss/postcss": "^4.3.0",
+    "next": "^15.5.15",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.3.0"
+  },
+  "overrides": {
+    "@ast-grep/napi": "0.42.1",
+    "glob": "10.4.5"
+  },
+  "devDependencies": {
+    "@opennextjs/cloudflare": "^1.19.1",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.4",
+    "typescript": "^5",
+    "wrangler": "^4.83.0"
+  }
+}

@@ -1,0 +1,169 @@
+/* GrailPinner — global CSS variables and base styles */
+
+:root {
+  /* ── Background / surface ────────────────────────────────────────────── */
+  --gp-bg: #030508;          /* near-black space */
+  --gp-surface: #0d1117;     /* card / panel surface */
+  --gp-surface-1: #111820;   /* raised surface */
+  --gp-surface-2: #161e2a;   /* tooltip / popover */
+
+  /* ── Borders ─────────────────────────────────────────────────────────── */
+  --gp-border: rgba(255, 255, 255, 0.08);
+  --gp-border-hover: rgba(255, 255, 255, 0.14);
+
+  /* ── Text ─────────────────────────────────────────────────────────────── */
+  --gp-text: #f8fafc;
+  --gp-muted: #94a3b8;
+  --gp-dim: #475569;
+
+  /* ── Accent — coins / premium (gold) ─────────────────────────────────── */
+  --gp-gold: #f59e0b;
+  --gp-gold-bright: #fbbf24;
+  --gp-gold-glow: rgba(245, 158, 11, 0.18);
+
+  /* ── Accent — figures (sky blue) ─────────────────────────────────────── */
+  --gp-blue: #38bdf8;
+  --gp-blue-dim: #0ea5e9;
+  --gp-blue-glow: rgba(56, 189, 248, 0.15);
+
+  /* ── Semantic ─────────────────────────────────────────────────────────── */
+  --gp-green: #4ade80;
+  --gp-green-glow: rgba(74, 222, 128, 0.12);
+  --gp-red: #f87171;
+  --gp-red-glow: rgba(248, 113, 113, 0.12);
+  --gp-yellow: #fde047;
+
+  /* ── Typography ───────────────────────────────────────────────────────── */
+  --gp-font-display: 'Bebas Neue', ui-sans-serif, system-ui, sans-serif;
+  --gp-font-body: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  /* ── Spacing ─────────────────────────────────────────────────────────── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ── Radii ───────────────────────────────────────────────────────────── */
+  --gp-radius-sm: 6px;
+  --gp-radius: 10px;
+  --gp-radius-lg: 16px;
+  --gp-radius-full: 9999px;
+
+  /* ── Shadows ─────────────────────────────────────────────────────────── */
+  --gp-shadow-card: 0 2px 12px rgba(0, 0, 0, 0.5);
+  --gp-shadow-modal: 0 8px 40px rgba(0, 0, 0, 0.7);
+  --gp-shadow-gold: 0 4px 20px rgba(245, 158, 11, 0.25);
+  --gp-shadow-blue: 0 4px 20px rgba(56, 189, 248, 0.2);
+
+  /* ── Transitions ─────────────────────────────────────────────────────── */
+  --gp-transition: 150ms ease;
+  --gp-transition-slow: 300ms ease;
+
+  /* ── Layout ──────────────────────────────────────────────────────────── */
+  --gp-sidebar-w: 220px;
+  --gp-topbar-h: 56px;
+}
+
+/* ── Reset + base ─────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--gp-bg);
+  color: var(--gp-text);
+  font-family: var(--gp-font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100dvh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ── Keyframes ────────────────────────────────────────────────────────────── */
+
+@keyframes floatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 8px var(--gp-gold-glow), 0 0 24px var(--gp-gold-glow);
+  }
+  50% {
+    box-shadow: 0 0 16px var(--gp-gold-glow), 0 0 48px var(--gp-gold-glow);
+  }
+}
+
+@keyframes vaultReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.94) translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* ── Utility: shimmer skeleton loader ───────────────────────────────────── */
+
+.gp-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--gp-surface) 25%,
+    var(--gp-surface-1) 50%,
+    var(--gp-surface) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+  border-radius: var(--gp-radius-sm);
+}
