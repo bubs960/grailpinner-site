@@ -255,8 +255,7 @@ export default function Home() {
       stat: '3,300 coins',
       sub: 'Grade-stratified pricing + melt floor',
       accent: '#f59e0b',
-      href: '/coins',
-      status: 'live',
+      status: 'coming-soon',
     },
     {
       emoji: '🪆',
