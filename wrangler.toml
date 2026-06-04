@@ -15,10 +15,6 @@ account_id = "64166b610fc81c1cc544767bef97baf5"
 enabled = true
 head_sampling_rate = 1
 
-[assets]
-directory = ".open-next/assets"
-binding = "ASSETS"
-
 # KV namespace for pro features + ISR cache
 # Create via: wrangler kv namespace create GP_KV
 [[kv_namespaces]]
