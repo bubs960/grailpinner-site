@@ -3,7 +3,7 @@
 # KV namespace ID: 81c7da102bea4362918fb0b5ec3c5b3a (GP_KV, created 2026-06-04)
 
 name = "grailpinner-site"
-pages_build_output_dir = ".open-next/assets"
+pages_build_output_dir = "out"
 compatibility_date = "2025-09-15"
 compatibility_flags = ["nodejs_compat", "enable_nodejs_process_v2"]
 
