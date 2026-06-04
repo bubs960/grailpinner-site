@@ -64,7 +64,7 @@ export default function NotFound() {
           transition: 'border-color 0.15s',
         }}
       >
-        Back to GrailPinner
+        Back to GrailPulse
       </Link>
     </main>
   );

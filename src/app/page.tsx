@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'GrailPinner — Choose Your Vault',
+  title: 'GrailPulse — Choose Your Vault',
   description: 'One collection. Every collectible you love.',
 };
 
@@ -282,7 +282,7 @@ export default function Home() {
       title: 'Request a Vault',
       sub: 'What do you collect?',
       accent: '#6b7280',
-      href: 'mailto:hello@grailpinner.com',
+      href: 'mailto:hello@grailpulse.com',
       status: 'request',
     },
   ];
@@ -415,7 +415,7 @@ export default function Home() {
             }}
           >
             <span style={{ fontSize: '18px' }}>🔮</span>
-            GRAILPINNER
+            GRAILPULSE
           </div>
           <button
             style={{
@@ -586,7 +586,7 @@ export default function Home() {
             letterSpacing: '0.02em',
           }}
         >
-          GrailPinner &copy; 2026 &middot; All your collectibles, one place
+          GrailPulse &copy; 2026 &middot; All your collectibles, one place
         </footer>
       </div>
     </>

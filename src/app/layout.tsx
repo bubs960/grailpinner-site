@@ -11,10 +11,10 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: 'GrailPinner — Your Collectibles Universe',
+  title: 'GrailPulse — Your Collectibles Universe',
   description: 'One vault for every collectible you love. Action figures, coins, and more.',
   openGraph: {
-    title: 'GrailPinner — Your Collectibles Universe',
+    title: 'GrailPulse — Your Collectibles Universe',
     description: 'One vault for every collectible you love. Action figures, coins, and more.',
     type: 'website',
   },
