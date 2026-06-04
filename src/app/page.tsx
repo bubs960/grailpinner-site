@@ -32,7 +32,6 @@ function VaultCard({ emoji, title, stat, sub, accent, href, status, index }: Vau
     animation: `cardFadeIn 0.5s ease forwards`,
     animationDelay: `${index * 0.08}s`,
     animationFillMode: 'both',
-    opacity2: 0,
     overflow: 'hidden',
     transition: 'transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease',
     minHeight: '200px',
