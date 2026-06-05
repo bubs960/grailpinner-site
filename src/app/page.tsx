@@ -163,7 +163,7 @@ function VaultCard({ emoji, title, stat, sub, accent, href, status, index }: Vau
           <p
             style={{
               fontSize: '13px',
-              color: '#6b7280',
+              color: '#9ca3af',
               margin: '4px 0 0',
               lineHeight: 1.4,
             }}
@@ -210,7 +210,7 @@ function VaultCard({ emoji, title, stat, sub, accent, href, status, index }: Vau
           <span
             style={{
               fontSize: '20px',
-              color: '#6b7280',
+              color: '#9ca3af',
               transition: 'transform 0.2s ease, color 0.2s ease',
             }}
             className="request-arrow"
@@ -478,7 +478,7 @@ export default function Home() {
             <p
               style={{
                 fontSize: '18px',
-                color: '#6b7280',
+                color: '#9ca3af',
                 fontWeight: 400,
                 letterSpacing: '0.01em',
               }}
@@ -514,7 +514,7 @@ export default function Home() {
                 style={{
                   fontSize: '13px',
                   fontWeight: 600,
-                  color: '#6b7280',
+                  color: '#9ca3af',
                   textTransform: 'uppercase',
                   letterSpacing: '0.08em',
                   marginBottom: '4px',
@@ -544,13 +544,13 @@ export default function Home() {
                   style={{
                     fontSize: '22px',
                     fontWeight: 800,
-                    color: '#374151',
+                    color: '#9ca3af',
                     letterSpacing: '-0.02em',
                   }}
                 >
                   — items
                 </p>
-                <p style={{ fontSize: '12px', color: '#4b5563', marginTop: '2px' }}>
+                <p style={{ fontSize: '12px', color: '#9ca3af', marginTop: '2px' }}>
                   Tracked
                 </p>
               </div>
@@ -559,13 +559,13 @@ export default function Home() {
                   style={{
                     fontSize: '22px',
                     fontWeight: 800,
-                    color: '#374151',
+                    color: '#9ca3af',
                     letterSpacing: '-0.02em',
                   }}
                 >
                   $—
                 </p>
-                <p style={{ fontSize: '12px', color: '#4b5563', marginTop: '2px' }}>
+                <p style={{ fontSize: '12px', color: '#9ca3af', marginTop: '2px' }}>
                   Est. Value
                 </p>
               </div>
@@ -580,7 +580,7 @@ export default function Home() {
             padding: '20px 40px',
             textAlign: 'center',
             fontSize: '13px',
-            color: '#374151',
+            color: '#9ca3af',
             letterSpacing: '0.02em',
           }}
         >
