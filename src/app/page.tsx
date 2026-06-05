@@ -252,10 +252,11 @@ export default function Home() {
     {
       emoji: '🪙',
       title: 'US Coins',
-      stat: '3,300 coins',
+      stat: '6,000+ coins',
       sub: 'Grade-stratified pricing + melt floor',
       accent: '#f59e0b',
-      status: 'coming-soon',
+      href: 'https://coins.grailpulse.com',
+      status: 'live',
     },
     {
       emoji: '🪆',
