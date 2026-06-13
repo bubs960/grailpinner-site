@@ -8,7 +8,7 @@ import { VERTICALS, LIVE_COUNT } from '@/data/verticals';
 export const metadata: Metadata = {
   title: 'GrailPulse — Real-Comp Price Guides for Collectors',
   description:
-    'Honest, condition-aware price guides built from real public sold listings — coins, die cast, and action figures. Not asking prices. What things actually sold for.',
+    'Price everything you collect in one place — coins, die cast, and figures — from real public sold listings, not asking prices. Most collectors keep more than one shelf; GrailPulse prices them all.',
   alternates: { canonical: '/' },
 };
 
@@ -39,11 +39,11 @@ export default function Home() {
               <span className="gp-hero__dot" aria-hidden="true" />
               Collector price guides
             </p>
-            <h1 className="gp-hero__title">Real prices for the grails you chase.</h1>
+            <h1 className="gp-hero__title">Real prices for everything you collect.</h1>
             <p className="gp-hero__lede">
-              GrailPulse turns millions of public sold listings into honest, condition-aware price
-              guides — across coins, die cast, and action figures. No asking-price guesswork. Just
-              what things actually sold for.
+              Most collectors keep more than one shelf. GrailPulse is the one place to price them
+              all — coins, die cast, and figures, built from real sold listings, not hopeful asking
+              prices. Video games next.
             </p>
             <div className="gp-hero__cta">
               <a className="gp-btn gp-btn--primary" href="#guides">
