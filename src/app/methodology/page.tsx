@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import { InfoCallout, InfoCard, InfoGrid, InfoShell } from '../info-page';
 
 export const metadata: Metadata = {
-  title: 'GrailPulse Methodology',
-  description: 'How GrailPulse price guides normalize sold comps, condition grades, confidence labels, and vertical-specific collector context.',
+  title: 'Methodology',
+  description:
+    'How GrailPulse builds a price guide: real completed sales, normalized by condition, filtered for noise, and labeled with comp count, freshness, and confidence.',
   alternates: {
     canonical: '/methodology',
   },
@@ -14,74 +15,50 @@ export default function MethodologyPage() {
     <InfoShell
       eyebrow="Price guide methodology"
       title="How GrailPulse turns comps into collector signals."
-      lede="The goal is not to republish marketplace data. GrailPulse adds condition grading, data cleaning, confidence labels, and vertical-specific context so collectors can make faster, better decisions."
+      lede="We don't republish marketplace noise. Every GrailPulse price is built from real completed sales, split by condition, cleaned of junk, and labeled with how much evidence stands behind it — so the number you read is one you can act on."
     >
       <InfoGrid>
-        <InfoCard kicker="Step 01" title="Collect public market signals">
+        <InfoCard kicker="Step 01" title="We start from real sold prices">
           <p>
-            Each vertical starts with recent sold-market evidence such as completed marketplace sales,
-            auction records, and approved partner data where available. Active asking prices are treated
-            as weak signals unless they are clearly marked as listings rather than sales.
+            Each guide is built from completed public sales — what collectors actually paid, not what a
+            seller is hoping for. Active asking prices are treated as weak signals at most, and never
+            counted as sales.
           </p>
         </InfoCard>
 
-        <InfoCard kicker="Step 02" title="Normalize by condition">
+        <InfoCard kicker="Step 02" title="We price by condition">
           <p>
-            A single average is not enough. Figures use loose, complete, and carded tiers. Coins use
-            grade bands and melt-floor logic where relevant. Games use loose, complete, and sealed tiers.
-            Die cast separates loose, carded, premium, chase, and variant-sensitive records.
+            A single average hides too much. We split comps by condition — loose, complete, and sealed for
+            figures and games; grade bands for coins; carded, loose, and chase for die cast — so the price
+            matches the item in your hand instead of blurring every grade together.
           </p>
         </InfoCard>
 
-        <InfoCard kicker="Step 03" title="Filter bad inputs">
+        <InfoCard kicker="Step 03" title="We filter the noise">
           <p>
-            Lots, reproductions, customs, damaged listings, mislabeled items, and extreme outliers can
-            distort a guide quickly. GrailPulse pages should disclose what was excluded and why confidence
-            changes when the comp count is thin.
+            Lots, reproductions, customs, damaged listings, mislabeled items, and obvious outliers distort a
+            guide fast. We strip them out before a price is calculated, and we keep the comp set honest
+            rather than padded.
           </p>
         </InfoCard>
 
-        <InfoCard kicker="Step 04" title="Publish confidence and freshness">
+        <InfoCard kicker="Step 04" title="We label confidence and freshness">
           <p>
-            Every price guide page should show last-updated timing, number of comps, and confidence tiers
-            such as Reliable, Limited, and Sparse. Low-data pages should be held back from indexing until
-            they have enough unique evidence.
+            Every guide shows how many comps back a price and how recent they are. When the evidence is
+            thin, we say so plainly — and we hold low-data pages back from search until they have enough
+            real comps to be useful.
           </p>
         </InfoCard>
       </InfoGrid>
 
       <InfoCallout>
-        <p className="info-eyebrow">Vertical examples</p>
-        <div className="info-callout__grid">
-          <div>
-            <h2>FigurePinner</h2>
-            <p>
-              The mature pattern: condition pricing, sparkline history, confidence labels, scan and deal
-              tools, and item-page editorial context.
-            </p>
-          </div>
-          <div>
-            <h2>CoinSpinner</h2>
-            <p>
-              The next trust push: methodology, visible freshness, confidence labels, sitemap, JSON-LD,
-              and a clear eBay/platform disclaimer.
-            </p>
-          </div>
-          <div>
-            <h2>GrailGamer</h2>
-            <p>
-              Build from day one with loose, complete, sealed, regional variants, noindex for thin pages,
-              and AggregateOffer schema on price ranges.
-            </p>
-          </div>
-          <div>
-            <h2>Die Cast</h2>
-            <p>
-              Keep family pages for scale, but enrich variant pages with carded/loose state, chase badges,
-              source freshness, and photo confidence.
-            </p>
-          </div>
-        </div>
+        <p className="info-eyebrow">The same standard, every shelf</p>
+        <h2>One method across coins, die cast, and figures.</h2>
+        <p>
+          Each live GrailPulse guide runs this same pipeline, tuned to how its corner of the hobby trades.
+          A coin&rsquo;s grade matters the way a figure&rsquo;s seal does, so the method bends to the
+          category — without ever bending the honesty of where a number came from.
+        </p>
       </InfoCallout>
     </InfoShell>
   );

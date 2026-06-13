@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { SiteHeader } from '@/app/components/SiteHeader';
 import { Footer } from '@/app/components/Footer';
-import { VERTICALS, LIVE_COUNT, type Vertical } from '@/data/verticals';
+import { LaneCard } from '@/app/components/LaneCard';
+import { VERTICALS, LIVE_COUNT } from '@/data/verticals';
 
 export const metadata: Metadata = {
   title: 'GrailPulse — Real-Comp Price Guides for Collectors',
@@ -25,36 +26,6 @@ const HOW = [
     body: 'Thin data is marked thin. Every guide shows how many comps back a price and how fresh they are.',
   },
 ];
-
-function LaneCard({ v }: { v: Vertical }) {
-  const live = v.status === 'live';
-  const accentStyle = { ['--lane-accent' as never]: v.accent };
-
-  const inner = (
-    <>
-      <div className="gp-lane__top">
-        <span className="gp-lane__room">{v.room}</span>
-        <span className={`gp-lane__badge ${live ? 'is-live' : 'is-soon'}`}>
-          {live ? 'Live' : 'Coming soon'}
-        </span>
-      </div>
-      <h3 className="gp-lane__name">{v.name}</h3>
-      <p className="gp-lane__cat">{v.category}</p>
-      <p className="gp-lane__blurb">{v.blurb}</p>
-      <span className="gp-lane__cta">{live ? `Open ${v.product} →` : 'In the works'}</span>
-    </>
-  );
-
-  return live && v.href ? (
-    <a className="gp-lane" href={v.href} target="_blank" rel="noopener noreferrer" style={accentStyle}>
-      {inner}
-    </a>
-  ) : (
-    <div className="gp-lane gp-lane--soon" style={accentStyle} aria-disabled="true">
-      {inner}
-    </div>
-  );
-}
 
 export default function Home() {
   return (
