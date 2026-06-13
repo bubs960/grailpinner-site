@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npx --yes cross-env NODE_OPTIONS=--max-old-space-size=4096 next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "build:cf": "npx --yes cross-env NODE_OPTIONS=--max-old-space-size=4096 next build",
-    "deploy": "npx --yes cross-env NODE_OPTIONS=--max-old-space-size=4096 npx @opennextjs/cloudflare build && wrangler deploy"
+    "build:cf": "next build",
+    "deploy": "npm run build && npx wrangler pages deploy out --project-name=grailpulse-hub"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.0.0",

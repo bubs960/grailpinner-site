@@ -10,12 +10,17 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: 'GrailPulse — Your Collectibles Universe',
-  description: 'One vault for every collectible you love. Action figures, coins, and more.',
+  metadataBase: new URL('https://grailpulse.com'),
+  title: {
+    default: 'GrailPulse — Passport for Collectors',
+    template: '%s | GrailPulse',
+  },
+  description: 'One collector passport for coins, die cast, figures, games, and every grail you track.',
   openGraph: {
-    title: 'GrailPulse — Your Collectibles Universe',
-    description: 'One vault for every collectible you love. Action figures, coins, and more.',
+    title: 'GrailPulse — Passport for Collectors',
+    description: 'One collector passport for coins, die cast, figures, games, and every grail you track.',
     type: 'website',
+    url: 'https://grailpulse.com',
   },
 };
 
