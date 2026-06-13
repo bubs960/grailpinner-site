@@ -23,7 +23,7 @@ export type Vertical = {
   /** Outbound URL when live; null when 'soon' (renders non-clickable). */
   href: string | null;
   status: VerticalStatus;
-  /** CSS color (token reference) for the lane accent. */
+  /** Concrete accent color for the lane glow (kept in sync with --gp-* tokens). */
   accent: string;
   /** One honest sentence in collector voice. */
   blurb: string;
@@ -38,7 +38,7 @@ export const VERTICALS: Vertical[] = [
     category: 'U.S. coins, key dates & varieties',
     href: 'https://coins.grailpulse.com',
     status: 'live',
-    accent: 'var(--gp-gold)',
+    accent: '#f59e0b',
     blurb: 'Grade-band pricing for key dates, mint errors, and the rolls worth more than face.',
   },
   {
@@ -49,7 +49,7 @@ export const VERTICALS: Vertical[] = [
     category: 'Hot Wheels, Matchbox & premium 1:64',
     href: 'https://diecast.grailpulse.com',
     status: 'live',
-    accent: 'var(--gp-red)',
+    accent: '#f87171',
     blurb: 'Mainline, premium, and chase castings tracked without losing the thrill of the hunt.',
   },
   {
@@ -60,7 +60,7 @@ export const VERTICALS: Vertical[] = [
     category: 'Action figures across every fandom',
     href: 'https://figurepinner.com',
     status: 'live',
-    accent: 'var(--gp-blue)',
+    accent: '#38bdf8',
     blurb: 'Real sold-comp pricing, sealed-vs-loose splits, and want-lists for the figures you chase.',
   },
   {
@@ -71,7 +71,7 @@ export const VERTICALS: Vertical[] = [
     category: 'Retro & modern video games',
     href: null,
     status: 'soon',
-    accent: 'var(--gp-green)',
+    accent: '#4ade80',
     blurb: 'Loose, complete, and sealed pricing across decades of cartridges and discs.',
   },
 ];

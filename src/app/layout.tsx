@@ -12,15 +12,18 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL('https://grailpulse.com'),
   title: {
-    default: 'GrailPulse — Passport for Collectors',
+    default: 'GrailPulse — Real-Comp Price Guides for Collectors',
     template: '%s | GrailPulse',
   },
-  description: 'One collector passport for coins, die cast, figures, games, and every grail you track.',
+  description:
+    'Honest, condition-aware price guides built from real public sold listings — coins, die cast, and action figures. The home for every GrailPulse price guide.',
   openGraph: {
-    title: 'GrailPulse — Passport for Collectors',
-    description: 'One collector passport for coins, die cast, figures, games, and every grail you track.',
+    title: 'GrailPulse — Real-Comp Price Guides for Collectors',
+    description:
+      'Honest, condition-aware price guides built from real public sold listings — coins, die cast, and action figures.',
     type: 'website',
     url: 'https://grailpulse.com',
+    siteName: 'GrailPulse',
   },
 };
 
@@ -43,7 +46,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body style={{ background: '#030508', color: '#ffffff', fontFamily: 'var(--font-outfit, sans-serif)' }}>
+      <body>
         {children}
       </body>
     </html>
