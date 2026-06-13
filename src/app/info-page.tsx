@@ -1,10 +1,13 @@
-import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { SiteHeader } from '@/app/components/SiteHeader';
+import { Footer } from '@/app/components/Footer';
 
 type InfoShellProps = {
   eyebrow: string;
   title: string;
   lede: string;
+  /** Short label for the header breadcrumb (e.g. "Methodology"). */
+  crumb?: string;
   children: ReactNode;
 };
 
@@ -14,23 +17,25 @@ type InfoCardProps = {
   children: ReactNode;
 };
 
-export function InfoShell({ eyebrow, title, lede, children }: InfoShellProps) {
+export function InfoShell({ eyebrow, title, lede, crumb, children }: InfoShellProps) {
   return (
-    <main className="info-page">
-      <div className="info-page__shell">
-        <Link className="info-page__back" href="/">
-          Back to Passport
-        </Link>
+    <div className="gp-page">
+      <SiteHeader crumb={crumb} />
 
-        <section className="info-hero">
-          <p className="info-eyebrow">{eyebrow}</p>
-          <h1>{title}</h1>
-          <p>{lede}</p>
-        </section>
+      <main className="info-page">
+        <div className="info-page__shell">
+          <section className="info-hero">
+            <p className="info-eyebrow">{eyebrow}</p>
+            <h1>{title}</h1>
+            <p>{lede}</p>
+          </section>
 
-        {children}
-      </div>
-    </main>
+          {children}
+        </div>
+      </main>
+
+      <Footer />
+    </div>
   );
 }
 
