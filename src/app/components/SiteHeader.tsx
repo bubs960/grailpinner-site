@@ -10,7 +10,7 @@ const NAV = [
   { label: 'Trust', href: '/trust' },
 ];
 
-export function SiteHeader({ crumb }: { crumb?: string }) {
+export function SiteHeader({ crumb, hideCta }: { crumb?: string; hideCta?: boolean }) {
   return (
     <header className="gp-header">
       <div className="gp-header__inner">
@@ -38,9 +38,11 @@ export function SiteHeader({ crumb }: { crumb?: string }) {
           </nav>
         )}
 
-        <Link href="/verticals" className="gp-header__cta">
-          Browse the guides
-        </Link>
+        {hideCta ? null : (
+          <Link href="/verticals" className="gp-header__cta">
+            Browse the guides
+          </Link>
+        )}
       </div>
     </header>
   );

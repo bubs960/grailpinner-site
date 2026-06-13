@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { SiteHeader } from '@/app/components/SiteHeader';
 import { Footer } from '@/app/components/Footer';
 import { LaneCard } from '@/app/components/LaneCard';
-import { VERTICALS, LIVE_COUNT } from '@/data/verticals';
+import { VERTICALS, LIVE_COUNT, LIVE_NAMES_PHRASE, SOON_NAMES_PHRASE } from '@/data/verticals';
 
 export const metadata: Metadata = {
   title: 'GrailPulse — Real-Comp Price Guides for Collectors',
@@ -30,20 +30,15 @@ const HOW = [
 export default function Home() {
   return (
     <div className="gp-page gp-home">
-      <SiteHeader />
+      <SiteHeader hideCta />
 
       <main>
         <section className="gp-hero">
           <div className="gp-shell gp-hero__inner">
-            <p className="gp-hero__eyebrow">
-              <span className="gp-hero__dot" aria-hidden="true" />
-              Collector price guides
-            </p>
             <h1 className="gp-hero__title">Real prices for everything you collect.</h1>
             <p className="gp-hero__lede">
-              Most collectors keep more than one shelf. GrailPulse is the one place to price them
-              all — coins, die cast, and figures, built from real sold listings, not hopeful asking
-              prices. Video games next.
+              Most collectors keep more than one shelf. GrailPulse prices them from real public
+              sold listings — not asking prices, not opinions.
             </p>
             <div className="gp-hero__cta">
               <a className="gp-btn gp-btn--primary" href="#guides">
@@ -54,7 +49,8 @@ export default function Home() {
               </Link>
             </div>
             <p className="gp-hero__trust">
-              {LIVE_COUNT} guides live · coins, die cast &amp; figures · video games next
+              {LIVE_COUNT} guides live · {LIVE_NAMES_PHRASE}
+              {SOON_NAMES_PHRASE ? ` · ${SOON_NAMES_PHRASE}` : ''}
             </p>
           </div>
         </section>

@@ -77,4 +77,20 @@ export const VERTICALS: Vertical[] = [
 ];
 
 export const LIVE_VERTICALS = VERTICALS.filter((v) => v.status === 'live');
+export const SOON_VERTICALS = VERTICALS.filter((v) => v.status === 'soon');
 export const LIVE_COUNT = LIVE_VERTICALS.length;
+
+/** Format a list as "a, b & c" (Oxford "&" for the last item). */
+function fmtList(items: string[]): string {
+  if (items.length === 0) return '';
+  if (items.length === 1) return items[0];
+  return `${items.slice(0, -1).join(', ')} & ${items[items.length - 1]}`;
+}
+
+/** "coins, die cast & figures" — derived from VERTICALS, never hand-typed. */
+export const LIVE_NAMES_PHRASE = fmtList(LIVE_VERTICALS.map((v) => v.name.toLowerCase()));
+
+/** "video games next" — derived from VERTICALS, never hand-typed. */
+export const SOON_NAMES_PHRASE = SOON_VERTICALS.length
+  ? `${fmtList(SOON_VERTICALS.map((v) => v.name.toLowerCase()))} next`
+  : '';
