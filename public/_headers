@@ -1,0 +1,6 @@
+# Cloudflare Pages headers.
+# Next emits the OG card as an extensionless file (out/opengraph-image); without
+# this, CF Pages serves it as application/octet-stream and social scrapers reject it.
+/opengraph-image
+  Content-Type: image/png
+  Cache-Control: public, max-age=3600
