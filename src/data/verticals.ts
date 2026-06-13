@@ -35,7 +35,7 @@ export const VERTICALS: Vertical[] = [
     name: 'Coins',
     product: 'CoinSpinner',
     room: 'Vault',
-    category: 'U.S. coins, key dates & varieties',
+    category: 'U.S. coins, mintmarks & varieties',
     href: 'https://coins.grailpulse.com',
     status: 'live',
     accent: '#f59e0b',
