@@ -12,14 +12,17 @@ export function LaneCard({ v }: { v: Vertical }) {
     <>
       <div className="gp-lane__top">
         <span className="gp-lane__room">{v.room}</span>
-        <span className={`gp-lane__badge ${live ? 'is-live' : 'is-soon'}`}>
+        <span
+          className={`gp-lane__badge ${live ? 'is-live' : 'is-soon'}`}
+          aria-label={live ? 'Status: live' : 'Status: coming soon'}
+        >
           {live ? 'Live' : 'Coming soon'}
         </span>
       </div>
       <h3 className="gp-lane__name">{v.name}</h3>
       <p className="gp-lane__cat">{v.category}</p>
       <p className="gp-lane__blurb">{v.blurb}</p>
-      <span className="gp-lane__cta">{live ? `Open ${v.product} →` : 'In the works'}</span>
+      <span className="gp-lane__cta">{live ? `Open ${v.product} →` : 'Launching soon →'}</span>
     </>
   );
 
