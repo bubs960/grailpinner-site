@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import { InfoCard, InfoGrid, InfoShell } from '../info-page';
 
 export const metadata: Metadata = {
-  title: 'GrailPulse Privacy',
-  description: 'GrailPulse privacy overview for Passport, collection tracking, submitted corrections, and analytics.',
+  title: 'Privacy',
+  description:
+    'Privacy on the GrailPulse hub: no logins, no stored collections; standard request logs and Google AdSense. Your collection lives on each individual guide.',
   alternates: {
     canonical: '/privacy',
   },
@@ -13,34 +14,35 @@ export default function PrivacyPage() {
   return (
     <InfoShell
       eyebrow="Privacy"
-      title="Privacy for collectors using GrailPulse."
-      lede="The Passport hub is designed around collection utility, not social-media exposure. Public collection sharing should be opt-in when real accounts are connected."
+      title="Privacy on GrailPulse."
+      lede="GrailPulse.com is a static directory — it has no logins and doesn&rsquo;t store your collection. Here&rsquo;s what that means for you. Last updated June 13, 2026."
     >
       <InfoGrid>
-        <InfoCard title="What may be collected">
+        <InfoCard title="What this hub collects">
           <p>
-            GrailPulse may collect account details, selected Passport lanes, collection entries, correction
-            reports, device analytics, and email preferences when those features are enabled.
+            Almost nothing. This site has no accounts and stores no collection data. We serve ads through
+            Google AdSense, which may set cookies as described in Google&rsquo;s policies, and standard
+            request logs may record basic data for security and performance.
           </p>
         </InfoCard>
 
-        <InfoCard title="How data is used">
+        <InfoCard title="Your collection lives on the guides">
           <p>
-            Data is used to save collections, improve price confidence, identify stale or incorrect comps,
-            personalize collector missions, and maintain site security and performance.
+            When you track a collection, that happens on the individual guide — for example FigurePinner —
+            each with its own privacy policy and controls. This hub only points you there.
           </p>
         </InfoCard>
 
-        <InfoCard title="What should stay private">
+        <InfoCard title="Cookies and ads">
           <p>
-            Collection value, exact inventory, watchlists, and contact details should be private by default.
-            Any public Passport or showcase feature should clearly label what will be shared.
+            The main third party on this hub is Google AdSense. You can manage ad personalization through
+            Google&rsquo;s ad settings and your browser&rsquo;s own cookie controls.
           </p>
         </InfoCard>
 
         <InfoCard title="Contact">
           <p>
-            For privacy or data correction requests, contact{' '}
+            For privacy or data-correction requests, email{' '}
             <a href="mailto:hello@grailpulse.com?subject=GrailPulse%20privacy%20request">hello@grailpulse.com</a>.
           </p>
         </InfoCard>
