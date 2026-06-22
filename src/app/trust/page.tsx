@@ -4,7 +4,7 @@ import { InfoCallout, InfoCard, InfoGrid, InfoShell } from '../info-page';
 export const metadata: Metadata = {
   title: 'Trust & Data',
   description:
-    'How GrailPulse earns trust: real sold-listing sources, honest affiliate links, a clear eBay disclaimer, labeled thin data, and an open correction path.',
+    'How GrailPulse earns trust through named evidence, guide-specific methodologies, honest outbound links, visible limits, and an open correction path.',
   alternates: {
     canonical: '/trust',
   },
@@ -15,13 +15,14 @@ export default function TrustPage() {
     <InfoShell
       eyebrow="Trust & data"
       title="How GrailPulse earns your trust."
-      lede="A price guide is only worth reading if you can see where the numbers came from. Here's what we do on every guide — show the source, keep the links honest, and admit when the data is too thin to trust."
+      lede="A price guide is only worth reading if you can understand what kind of evidence sits behind the number. Every GrailPulse product names its sources, explains its method, keeps outbound links honest, and provides a correction path."
     >
       <InfoGrid>
-        <InfoCard kicker="Where prices come from" title="Real sold listings">
+        <InfoCard kicker="Where prices come from" title="The evidence is named">
           <p>
-            Every price is built from completed public sales — primarily recent eBay sold listings. We label
-            the source, and we never present an active asking price as a completed sale.
+            Figure and die-cast guides use completed public sales where available. CoinSpinner uses
+            published-guide estimates with grade and source context. We do not describe one evidence type
+            as another.
           </p>
         </InfoCard>
 
@@ -40,11 +41,11 @@ export default function TrustPage() {
           </p>
         </InfoCard>
 
-        <InfoCard kicker="Quality control" title="Thin data, labeled">
+        <InfoCard kicker="Quality control" title="Limits stay visible">
           <p>
-            When a page has too few comps to trust, we say so with a clear confidence label and keep it out
-            of search until it has enough real evidence. We&rsquo;d rather show you less than show you a
-            number we can&rsquo;t stand behind.
+            When sold-comp evidence is thin, it should be labeled. When a guide estimate depends on grade
+            or another qualifier, that context should stay beside it. We would rather show a limitation
+            than imply certainty the source cannot support.
           </p>
         </InfoCard>
       </InfoGrid>

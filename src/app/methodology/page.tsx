@@ -4,7 +4,7 @@ import { InfoCallout, InfoCard, InfoGrid, InfoShell } from '../info-page';
 export const metadata: Metadata = {
   title: 'Methodology',
   description:
-    'How GrailPulse builds a price guide: real completed sales, normalized by condition, filtered for noise, and labeled with comp count, freshness, and confidence.',
+    'How GrailPulse matches each collector category with source-fit evidence, condition context, transparent methodology, and an open correction path.',
   alternates: {
     canonical: '/methodology',
   },
@@ -14,50 +14,49 @@ export default function MethodologyPage() {
   return (
     <InfoShell
       eyebrow="Price guide methodology"
-      title="How GrailPulse turns comps into collector signals."
-      lede="We don't republish marketplace noise. Every GrailPulse price is built from real completed sales, split by condition, cleaned of junk, and labeled with how much evidence stands behind it — so the number you read is one you can act on."
+      title="One trust standard. A method fitted to each shelf."
+      lede="A useful coin estimate and a useful figure comp do not come from identical evidence. GrailPulse keeps the standard consistent — name the source, preserve collector context, explain the method, and show the limits — while letting each guide use the evidence that fits its market."
     >
       <InfoGrid>
-        <InfoCard kicker="Step 01" title="We start from real sold prices">
+        <InfoCard kicker="Step 01" title="We start with source-fit evidence">
           <p>
-            Each guide is built from completed public sales — what collectors actually paid, not what a
-            seller is hoping for. Active asking prices are treated as weak signals at most, and never
-            counted as sales.
+            Figure and die-cast guides lean on completed public sales. CoinSpinner combines published-guide
+            estimates with grade, melt, and source context. The source is identified so you know what kind
+            of number you are reading.
           </p>
         </InfoCard>
 
-        <InfoCard kicker="Step 02" title="We price by condition">
+        <InfoCard kicker="Step 02" title="We preserve collector context">
           <p>
-            A single average hides too much. We split comps by condition — loose, complete, and sealed for
-            figures and games; grade bands for coins; carded, loose, and chase for die cast — so the price
-            matches the item in your hand instead of blurring every grade together.
+            A single average hides too much. Grade bands for coins, carded versus loose for die cast,
+            and loose versus sealed for figures keep unlike examples from being blurred into one
+            misleading number.
           </p>
         </InfoCard>
 
-        <InfoCard kicker="Step 03" title="We filter the noise">
+        <InfoCard kicker="Step 03" title="We clean and label the signal">
           <p>
-            Lots, reproductions, customs, damaged listings, mislabeled items, and obvious outliers distort a
-            guide fast. We strip them out before a price is calculated, and we keep the comp set honest
-            rather than padded.
+            Where sold listings are used, lots, reproductions, customs, damaged listings, mislabeled
+            items, and obvious outliers are filtered. Where guide estimates are used, the guide and
+            relevant qualifiers stay attached.
           </p>
         </InfoCard>
 
-        <InfoCard kicker="Step 04" title="We label confidence and freshness">
+        <InfoCard kicker="Step 04" title="We show the method and its limits">
           <p>
-            Every guide shows how many comps back a price and how recent they are. When the evidence is
-            thin, we say so plainly — and we hold low-data pages back from search until they have enough
-            real comps to be useful.
+            Each product explains its own pricing model, evidence labels, update cadence, and correction
+            path. Thin or incomplete evidence should be identified rather than dressed up as certainty.
           </p>
         </InfoCard>
       </InfoGrid>
 
       <InfoCallout>
-        <p className="info-eyebrow">The same standard, every shelf</p>
-        <h2>One method across coins, die cast, and figures.</h2>
+        <p className="info-eyebrow">The same trust standard, every shelf</p>
+        <h2>Different evidence. The same obligation to explain it.</h2>
         <p>
-          Each live GrailPulse guide runs this same pipeline, tuned to how its corner of the hobby trades.
-          A coin&rsquo;s grade matters the way a figure&rsquo;s seal does, so the method bends to the
-          category — without ever bending the honesty of where a number came from.
+          A coin&rsquo;s grade matters the way a figure&rsquo;s seal does, but their markets do not produce
+          identical data. The method bends to the category without bending the honesty of where a number
+          came from.
         </p>
       </InfoCallout>
     </InfoShell>

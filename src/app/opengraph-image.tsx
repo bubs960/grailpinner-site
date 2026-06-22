@@ -4,7 +4,7 @@ import { ImageResponse } from 'next/og';
 // og:image + twitter:image meta tags, so no manual metadata wiring is needed.
 
 export const dynamic = 'force-static';
-export const alt = 'GrailPulse — real-comp price guides for collectors';
+export const alt = 'GrailPulse — collector price guides for every shelf';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -47,11 +47,11 @@ export default function OpengraphImage() {
             letterSpacing: '-2px',
           }}
         >
-          Real prices for everything you collect.
+          Know what belongs on every shelf.
         </div>
 
         <div style={{ fontSize: '28px', color: '#9aa6b6', marginTop: '40px' }}>
-          Coins · Die Cast · Figures · Games — from real sold listings
+          Coins · Die Cast · Figures · Games — evidence and methodology shown
         </div>
       </div>
     ),

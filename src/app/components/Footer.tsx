@@ -18,7 +18,7 @@ export function Footer() {
       <div className="gp-footer__inner">
         <span className="gp-footer__brand">
           <span className="gp-brand__mark gp-brand__mark--sm" aria-hidden="true" />
-          GrailPulse — real-comp price guides for collectors
+          GrailPulse — collector price guides for every shelf
         </span>
 
         <nav className="gp-footer__links" aria-label="Footer">
@@ -30,9 +30,9 @@ export function Footer() {
         </nav>
 
         <p className="gp-footer__legal">
-          © {year} GrailPulse. Prices are estimates derived from public sold-listing data — not offers,
-          appraisals, or financial advice. GrailPulse is not affiliated with or endorsed by eBay Inc.
-          Marketplace and brand names are used for identification only.
+          © {year} GrailPulse. Prices are estimates derived from the evidence identified by each guide —
+          not offers, appraisals, or financial advice. GrailPulse is not affiliated with or endorsed by
+          eBay Inc. Marketplace and brand names are used for identification only.
         </p>
       </div>
     </footer>

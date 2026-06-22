@@ -7,7 +7,7 @@ import { VERTICALS, LIVE_VERTICALS } from '@/data/verticals';
 export const metadata: Metadata = {
   title: 'Price Guides',
   description:
-    'Every GrailPulse price guide in one place — coins, die cast, and figures live now, with video games on the way. Each one prices real sold listings by condition.',
+    'Every GrailPulse price guide in one place — coins, die cast, and figures live now, with video games on the way. Each uses evidence fitted to its collector market.',
   alternates: {
     canonical: '/verticals',
   },
@@ -30,7 +30,7 @@ export default function VerticalsPage() {
     <InfoShell
       eyebrow="The price guides"
       title="Every GrailPulse guide, one directory."
-      lede="GrailPulse runs a dedicated price guide for each corner of the hobby. Coins, die cast, and figures are live now; video games are next. Each one prices real sold listings by condition — open the one you collect."
+      lede="GrailPulse runs a dedicated price guide for each corner of the hobby. Coins, die cast, and figures are live now; video games are next. Each product explains its sources, context, and pricing method — open the one you collect."
     >
       <JsonLd data={itemListSchema} />
       <section className="gp-lane-grid" aria-label="GrailPulse price guides">

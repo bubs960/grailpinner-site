@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-// One sticky header for every page (the homepage composes it too in Phase 2).
+// One sticky header for every page.
 // Pass `crumb` on interior pages to swap the nav links for a breadcrumb trail.
 // Server component — no client JS; the mobile collapse is pure CSS.
 

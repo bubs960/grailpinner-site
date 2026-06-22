@@ -1,4 +1,5 @@
 import type { Vertical } from '@/data/verticals';
+import { CollectorObject } from '@/app/components/CollectorObject';
 
 // One price-guide "lane" card. Live verticals are real outbound links; pending
 // ones render as a non-clickable card with a "Coming soon" badge (never a dead
@@ -19,15 +20,24 @@ export function LaneCard({ v }: { v: Vertical }) {
           {live ? 'Live' : 'Coming soon'}
         </span>
       </div>
-      <h3 className="gp-lane__name">{v.name}</h3>
-      <p className="gp-lane__cat">{v.category}</p>
+      <div className="gp-lane__body">
+        <div className="gp-lane__copy">
+          <p className="gp-lane__category">{v.name}</p>
+          <h3 className="gp-lane__name">{v.product}</h3>
+          <p className="gp-lane__cat">{v.category}</p>
+        </div>
+        <div className="gp-lane__object">
+          <CollectorObject kind={v.key} />
+        </div>
+      </div>
       <p className="gp-lane__blurb">{v.blurb}</p>
-      <span className="gp-lane__cta">{live ? `Open ${v.product} →` : 'Launching soon →'}</span>
+      <p className="gp-lane__evidence">{v.evidence}</p>
+      <span className="gp-lane__cta">{live ? `Enter ${v.product} →` : 'In development'}</span>
     </>
   );
 
   return live && v.href ? (
-    <a className="gp-lane" href={v.href} target="_blank" rel="noopener noreferrer" style={accentStyle}>
+    <a className="gp-lane" href={v.href} style={accentStyle}>
       {inner}
     </a>
   ) : (

@@ -5,7 +5,7 @@
 // the roster can never drift out of sync (the way three hand-authored copies did
 // before). When a vertical goes live, flip its `status` here and nowhere else.
 //
-// Liveness verified 2026-06-12: coins / diecast / figures return 200;
+// Liveness verified 2026-06-22: coins / diecast / figures return 200;
 // games.grailpulse.com is not deployed yet (status 'soon', no outbound link).
 
 export type VerticalStatus = 'live' | 'soon';
@@ -27,6 +27,8 @@ export type Vertical = {
   accent: string;
   /** One honest sentence in collector voice. */
   blurb: string;
+  /** Short description of the evidence model used by the guide. */
+  evidence: string;
 };
 
 export const VERTICALS: Vertical[] = [
@@ -40,17 +42,19 @@ export const VERTICALS: Vertical[] = [
     status: 'live',
     accent: '#f59e0b',
     blurb: 'Grade-band pricing for key dates, mint errors, and the rolls worth more than face.',
+    evidence: 'Published-guide estimates · grade and source context',
   },
   {
     key: 'diecast',
     name: 'Die Cast',
-    product: 'Die Cast',
+    product: 'GrailPulse Die Cast',
     room: 'Garage',
     category: 'Hot Wheels, Matchbox & premium 1:64',
     href: 'https://diecast.grailpulse.com',
     status: 'live',
     accent: '#f87171',
     blurb: 'Mainline, premium, and chase castings tracked without losing the thrill of the hunt.',
+    evidence: 'Public sold comps · casting and condition splits',
   },
   {
     key: 'figures',
@@ -62,6 +66,7 @@ export const VERTICALS: Vertical[] = [
     status: 'live',
     accent: '#38bdf8',
     blurb: 'Real sold-comp pricing, sealed-vs-loose splits, and want-lists for the figures you chase.',
+    evidence: 'Public sold comps · loose and sealed context',
   },
   {
     key: 'games',
@@ -73,6 +78,7 @@ export const VERTICALS: Vertical[] = [
     status: 'soon',
     accent: '#4ade80',
     blurb: 'Loose, complete, and sealed pricing across decades of cartridges and discs.',
+    evidence: 'Condition-aware market pricing in development',
   },
 ];
 
