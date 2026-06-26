@@ -54,7 +54,7 @@ export const VERTICALS: Vertical[] = [
     status: 'live',
     accent: '#f87171',
     blurb: 'Mainline, premium, and chase castings tracked without losing the thrill of the hunt.',
-    evidence: 'Public sold comps · casting and condition splits',
+    evidence: 'Modeled seed estimates · casting and condition context',
   },
   {
     key: 'figures',
