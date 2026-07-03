@@ -1,4 +1,16 @@
 # Cloudflare Pages headers.
+# Security headers on every path. CSP is Report-Only (never enforced) — the ad
+# script (highperformanceformat.com) likely injects its own iframe/subresource
+# origins at runtime that aren't visible from source, so this ships Report-Only
+# first; only tighten/enforce once a report collector exists and a monitoring
+# window shows no unexpected violations (same discipline as figurepinner-site).
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.highperformanceformat.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; frame-src https://www.highperformanceformat.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
+
 # Next emits the OG card as an extensionless file (out/opengraph-image); without
 # this, CF Pages serves it as application/octet-stream and social scrapers reject it.
 /opengraph-image
