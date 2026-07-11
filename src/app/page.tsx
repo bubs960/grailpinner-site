@@ -5,6 +5,8 @@ import { Footer } from '@/app/components/Footer';
 import { LaneCard } from '@/app/components/LaneCard';
 import { CollectorObject } from '@/app/components/CollectorObject';
 import { HubAd } from '@/app/components/HubAd';
+import { CollectorPulse } from '@/app/components/CollectorPulse';
+import type { Vertical } from '@/data/verticals';
 import {
   VERTICALS,
   LIVE_COUNT,
@@ -43,6 +45,32 @@ const TRUST_POINTS = [
   { label: 'Corrections', value: 'Easy to flag' },
 ];
 
+// Rendered twice (desktop position inside the hero, mobile position after
+// the lane grid) with CSS toggling which one shows at <=640px — Steve's S3
+// call was "move it below the lane grid" on mobile, not hide it, and CSS
+// `order` can't reorder elements across two different sections.
+function Cabinet({ variant }: { variant: 'hero' | 'mobile' }) {
+  return (
+    <div
+      className={`gp-cabinet gp-cabinet--${variant}`}
+      aria-label="The GrailPulse collector cabinet"
+    >
+      <div className="gp-cabinet__rail" aria-hidden="true" />
+      {VERTICALS.map((v: Vertical) => (
+        <div
+          className={`gp-cabinet__cell${v.status === 'soon' ? ' is-soon' : ''}`}
+          style={{ ['--lane-accent' as never]: v.accent }}
+          key={v.key}
+        >
+          <CollectorObject kind={v.key} />
+          <span className="gp-cabinet__product">{v.product}</span>
+          <span className="gp-cabinet__room">{v.room}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <div className="gp-page gp-home">
@@ -76,22 +104,11 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="gp-cabinet" aria-label="The GrailPulse collector cabinet">
-              <div className="gp-cabinet__rail" aria-hidden="true" />
-              {VERTICALS.map((v) => (
-                <div
-                  className={`gp-cabinet__cell${v.status === 'soon' ? ' is-soon' : ''}`}
-                  style={{ ['--lane-accent' as never]: v.accent }}
-                  key={v.key}
-                >
-                  <CollectorObject kind={v.key} />
-                  <span className="gp-cabinet__product">{v.product}</span>
-                  <span className="gp-cabinet__room">{v.room}</span>
-                </div>
-              ))}
-            </div>
+            <Cabinet variant="hero" />
           </div>
         </section>
+
+        <CollectorPulse />
 
         <section className="gp-proof" aria-label="GrailPulse trust standards">
           <div className="gp-shell gp-proof__inner">
@@ -122,6 +139,7 @@ export default function Home() {
                 <LaneCard key={v.key} v={v} />
               ))}
             </div>
+            <Cabinet variant="mobile" />
           </div>
         </section>
 
