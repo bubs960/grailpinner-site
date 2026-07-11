@@ -34,6 +34,16 @@ export const metadata: Metadata = {
     title: 'GrailPulse — Collector Price Guides for Every Shelf',
     description: SITE_DESC,
   },
+  alternates: {
+    types: {
+      'application/rss+xml': [
+        {
+          url: '/feeds/collector-market-pulse.xml',
+          title: 'GrailPulse Collector Market Pulse',
+        },
+      ],
+    },
+  },
   robots: { index: true, follow: true },
 };
 
