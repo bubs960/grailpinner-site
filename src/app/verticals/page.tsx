@@ -41,12 +41,12 @@ export default function VerticalsPage() {
 
       <InfoCallout>
         <p className="info-eyebrow">Why separate guides</p>
-        <h2>Not one login. A network of them.</h2>
+        <h2>Not one giant catalog. A network of guides.</h2>
         <p>
           GrailPulse isn&rsquo;t a single vault for everything you own — it&rsquo;s a network of guides, each
           built for one category. A coin collector and a figure collector don&rsquo;t want the same tools,
           the same vocabulary, or the same trust signals. Open the one you collect; each keeps its own
-          login, its own data, and its own method.
+          data, its own vocabulary, and its own method.
         </p>
       </InfoCallout>
     </InfoShell>

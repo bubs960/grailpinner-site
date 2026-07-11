@@ -16,11 +16,7 @@ export function LaneCard({ v }: { v: Vertical }) {
   const accentStyle = { ['--lane-accent' as never]: v.accent };
 
   return (
-    <div
-      className={`gp-lane${live ? '' : ' gp-lane--soon'}`}
-      style={accentStyle}
-      aria-disabled={live ? undefined : 'true'}
-    >
+    <div className={`gp-lane${live ? '' : ' gp-lane--soon'}`} style={accentStyle}>
       {live && v.href && (
         <a className="gp-lane__stretched-link" href={v.href} aria-label={`Enter ${v.product}`} />
       )}

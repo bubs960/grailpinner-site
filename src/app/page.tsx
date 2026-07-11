@@ -70,7 +70,7 @@ export default function Home() {
                 </Link>
               </div>
               <p className="gp-hero__trust">
-                {LIVE_COUNT} guides live · {LIVE_ITEM_COUNT.toLocaleString()}+ items priced across{' '}
+                {LIVE_COUNT} guides live · {LIVE_ITEM_COUNT.toLocaleString()}+ items cataloged across{' '}
                 {LIVE_NAMES_PHRASE}
                 {SOON_NAMES_PHRASE ? ` · ${SOON_NAMES_PHRASE}` : ''}
               </p>
