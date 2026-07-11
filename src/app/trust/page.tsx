@@ -28,9 +28,8 @@ export default function TrustPage() {
 
         <InfoCard kicker="Affiliate hygiene" title="Honest buying links">
           <p>
-            Outbound buying links are marked <code>rel=&quot;sponsored nofollow&quot;</code>. We point you back
-            to the marketplace as a buying path — never as an endorsement — and a guide&rsquo;s price never
-            changes because a link is on the page.
+            This hub contains no marketplace or affiliate links at all — every door here leads into one of
+            our own guides. Buying paths, and their disclosures, live inside the guides themselves.
           </p>
         </InfoCard>
 
