@@ -119,7 +119,7 @@ export function CollectorPulse() {
     : null;
 
   return (
-    <section className="gp-pulse" aria-label="The Collector Pulse — live catalog activity across GrailPulse">
+    <section className="gp-pulse" aria-label="The Collector Pulse — today's catalog picks across GrailPulse">
       <div className="gp-shell gp-pulse__inner">
         <div className="gp-pulse__head">
           <p className="gp-eyebrow">The Collector Pulse</p>
@@ -176,6 +176,9 @@ function PulseWave() {
       <path className="gp-pulse__baseline" d="M0,40 L400,40" />
       {VERTICALS.map((v, i) => {
         const cx = spikeX[i];
+        // spikeX only has 4 slots — a 5th vertical would produce an
+        // undefined cx and a broken path, so skip rather than render one.
+        if (cx == null) return null;
         const d = `M${cx - 20},40 L${cx - 8},40 L${cx - 4},15 L${cx},65 L${cx + 4},30 L${cx + 8},40 L${cx + 20},40`;
         return (
           <path
