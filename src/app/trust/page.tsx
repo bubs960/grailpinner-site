@@ -4,7 +4,7 @@ import { InfoCallout, InfoCard, InfoGrid, InfoShell } from '../info-page';
 export const metadata: Metadata = {
   title: 'Trust & Data',
   description:
-    'How GrailPulse earns trust through named evidence, guide-specific methodologies, honest outbound links, visible limits, and an open correction path.',
+    'How GrailPulse earns trust: named sources, a method explained per guide, honest outbound links, visible limits, and an open way to flag mistakes.',
   alternates: {
     canonical: '/trust',
   },

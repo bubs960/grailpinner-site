@@ -52,7 +52,7 @@ export default function OpengraphImage() {
         </div>
 
         <div style={{ fontSize: '28px', color: '#9aa6b6', marginTop: '40px' }}>
-          {`${VERTICALS.map((v) => v.name).join(' · ')} — evidence and methodology shown`}
+          {`${VERTICALS.map((v) => v.name).join(' · ')} — real prices, sources named`}
         </div>
       </div>
     ),

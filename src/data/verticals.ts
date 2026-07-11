@@ -7,6 +7,10 @@
 //
 // Liveness verified 2026-06-22: coins / diecast / figures return 200;
 // games.grailpulse.com is not deployed yet (status 'soon', no outbound link).
+//
+// `count` values verified live 2026-07-10 against each vertical's own homepage
+// stat (coins.grailpulse.com, diecast.grailpulse.com, figurepinner.com) —
+// re-verify before reusing if this file is untouched for a long stretch.
 
 export type VerticalStatus = 'live' | 'soon';
 
@@ -27,8 +31,12 @@ export type Vertical = {
   accent: string;
   /** One honest sentence in collector voice. */
   blurb: string;
-  /** Short description of the evidence model used by the guide. */
+  /** Short description of how the guide prices things. */
   evidence: string;
+  /** Real catalog-size stat as displayed on the vertical's own live site (never invented). */
+  count?: number;
+  /** What `count` counts, in the vertical's own words (e.g. "coin references"). */
+  countUnit?: string;
 };
 
 /** The hub's hero H1 — shared with the OG/social card so the two can't drift. */
@@ -44,8 +52,10 @@ export const VERTICALS: Vertical[] = [
     href: 'https://coins.grailpulse.com',
     status: 'live',
     accent: '#f59e0b',
-    blurb: 'Grade-band pricing for key dates, mint errors, and the rolls worth more than face.',
+    blurb: 'A single misaligned die in 1955 sent doubled-die Lincoln cents into circulation — collectors still check their change for one.',
     evidence: 'Published-guide estimates · grade and source context',
+    count: 8536,
+    countUnit: 'coin references',
   },
   {
     key: 'diecast',
@@ -56,8 +66,10 @@ export const VERTICALS: Vertical[] = [
     href: 'https://diecast.grailpulse.com',
     status: 'live',
     accent: '#f87171',
-    blurb: 'Mainline, premium, and chase castings tracked without losing the thrill of the hunt.',
+    blurb: 'Mattel scrapped the pink Beach Bomb prototype for tipping on its own orange track — only two are known to survive.',
     evidence: 'Modeled seed estimates · casting and condition context',
+    count: 13024,
+    countUnit: 'reference records',
   },
   {
     key: 'figures',
@@ -68,8 +80,10 @@ export const VERTICALS: Vertical[] = [
     href: 'https://figurepinner.com',
     status: 'live',
     accent: '#38bdf8',
-    blurb: 'Real sold-comp pricing, sealed-vs-loose splits, and want-lists for the figures you chase.',
+    blurb: "Christmas 1977's hottest Star Wars toy wasn't a figure — it was an empty box collectors could mail in for one.",
     evidence: 'Public sold comps · loose and sealed context',
+    count: 22500,
+    countUnit: 'figures',
   },
   {
     key: 'games',
@@ -80,7 +94,7 @@ export const VERTICALS: Vertical[] = [
     href: null,
     status: 'soon',
     accent: '#4ade80',
-    blurb: 'Loose, complete, and sealed pricing across decades of cartridges and discs.',
+    blurb: 'Nintendo made just 116 World Championships cartridges in 1990 — the rarest, most chased grail in NES history.',
     evidence: 'Condition-aware market pricing in development',
   },
 ];
@@ -103,3 +117,6 @@ export const LIVE_NAMES_PHRASE = fmtList(LIVE_VERTICALS.map((v) => v.name.toLowe
 export const SOON_NAMES_PHRASE = SOON_VERTICALS.length
   ? `${fmtList(SOON_VERTICALS.map((v) => v.name.toLowerCase()))} next`
   : '';
+
+/** Sum of live verticals' real counts — derived, never hand-typed. 0 if none set. */
+export const LIVE_ITEM_COUNT = LIVE_VERTICALS.reduce((sum, v) => sum + (v.count ?? 0), 0);

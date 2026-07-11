@@ -5,19 +5,26 @@ import { Footer } from '@/app/components/Footer';
 import { LaneCard } from '@/app/components/LaneCard';
 import { CollectorObject } from '@/app/components/CollectorObject';
 import { HubAd } from '@/app/components/HubAd';
-import { VERTICALS, LIVE_COUNT, LIVE_NAMES_PHRASE, SOON_NAMES_PHRASE, HERO_TITLE } from '@/data/verticals';
+import {
+  VERTICALS,
+  LIVE_COUNT,
+  LIVE_NAMES_PHRASE,
+  SOON_NAMES_PHRASE,
+  HERO_TITLE,
+  LIVE_ITEM_COUNT,
+} from '@/data/verticals';
 
 export const metadata: Metadata = {
   title: 'GrailPulse — Collector Price Guides for Every Shelf',
   description:
-    'Collector price guides for coins, die cast, and figures, built from source-fit market evidence with each guide’s methodology shown clearly.',
+    'Collector price guides for coins, die cast, and figures — priced from real sales and named sources, with the method shown on every guide.',
   alternates: { canonical: '/' },
 };
 
 const HOW = [
   {
-    title: 'Evidence that fits the category',
-    body: 'Sold comps where the market supports them; source-tagged guide estimates where published references are the stronger signal.',
+    title: 'Real prices, not asks',
+    body: "Sold comps when the market has enough of them; clearly-labeled guide estimates when it doesn't. Either way, you know which one you're looking at.",
   },
   {
     title: 'Collector context included',
@@ -25,15 +32,15 @@ const HOW = [
   },
   {
     title: 'The method stays visible',
-    body: 'Each guide explains its sources, pricing model, limits, and correction path so you can judge the evidence for yourself.',
+    body: 'Each guide explains its sources, pricing model, limits, and correction path — so you can judge the number for yourself.',
   },
 ];
 
 const TRUST_POINTS = [
-  { label: 'Sources', value: 'Evidence named' },
-  { label: 'Methodology', value: 'Guide-specific' },
-  { label: 'Context', value: 'Condition aware' },
-  { label: 'Corrections', value: 'Open channel' },
+  { label: 'Sources', value: 'Named, not hidden' },
+  { label: 'Methodology', value: 'Explained per guide' },
+  { label: 'Context', value: 'Grade & condition kept' },
+  { label: 'Corrections', value: 'Easy to flag' },
 ];
 
 export default function Home() {
@@ -51,8 +58,8 @@ export default function Home() {
               </p>
               <h1 className="gp-hero__title">{HERO_TITLE}</h1>
               <p className="gp-hero__lede">
-                Coins in the vault. Cars in the garage. Figures on the shelf. GrailPulse brings
-                each collection its own purpose-built guide and shows the evidence behind the number.
+                Coins in the vault. Cars in the garage. Figures on the shelf. Each collection gets
+                its own purpose-built guide — with the method shown, not hidden.
               </p>
               <div className="gp-hero__cta">
                 <a className="gp-btn gp-btn--primary" href="#guides">
@@ -63,7 +70,8 @@ export default function Home() {
                 </Link>
               </div>
               <p className="gp-hero__trust">
-                {LIVE_COUNT} guides live · {LIVE_NAMES_PHRASE}
+                {LIVE_COUNT} guides live · {LIVE_ITEM_COUNT.toLocaleString()}+ items priced across{' '}
+                {LIVE_NAMES_PHRASE}
                 {SOON_NAMES_PHRASE ? ` · ${SOON_NAMES_PHRASE}` : ''}
               </p>
             </div>
@@ -105,8 +113,8 @@ export default function Home() {
               <p className="gp-eyebrow">The price guides</p>
               <h2>Enter the corner of the hobby you know.</h2>
               <p className="gp-section-sub">
-                Each product has its own collector culture, evidence model, and vocabulary. The hub
-                keeps them connected without sanding those differences away.
+                Each product has its own collector culture and its own way of pricing. The hub keeps
+                them connected without smoothing those differences away.
               </p>
             </div>
             <div className="gp-lane-grid">

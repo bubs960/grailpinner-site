@@ -4,7 +4,7 @@ import { InfoCallout, InfoCard, InfoGrid, InfoShell } from '../info-page';
 export const metadata: Metadata = {
   title: 'Methodology',
   description:
-    'How GrailPulse matches each collector category with source-fit evidence, condition context, transparent methodology, and an open correction path.',
+    'How GrailPulse fits real pricing evidence to each collector category, keeps condition context attached, and gives you an open way to flag mistakes.',
   alternates: {
     canonical: '/methodology',
   },
@@ -18,7 +18,7 @@ export default function MethodologyPage() {
       lede="A useful coin estimate and a useful figure comp do not come from identical evidence. GrailPulse keeps the standard consistent — name the source, preserve collector context, explain the method, and show the limits — while letting each guide use the evidence that fits its market."
     >
       <InfoGrid>
-        <InfoCard kicker="Step 01" title="We start with source-fit evidence">
+        <InfoCard kicker="Step 01" title="We start with evidence that fits the category">
           <p>
             Figure guides lean on completed public sold comps. Die-cast guides use modeled seed estimates
             with casting and condition context. CoinSpinner combines published-guide estimates with grade,

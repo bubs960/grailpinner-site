@@ -13,7 +13,7 @@ const outfit = Outfit({
 
 const SITE_URL = 'https://grailpulse.com';
 const SITE_DESC =
-  'Collector price guides for coins, die cast, and figures, built from source-fit market evidence with each guide’s methodology shown clearly.';
+  'Collector price guides for coins, die cast, and figures — priced from real sales and named sources, with the method shown on every guide.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
