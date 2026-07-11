@@ -5,7 +5,7 @@ import { Footer } from '@/app/components/Footer';
 import { LaneCard } from '@/app/components/LaneCard';
 import { CollectorObject } from '@/app/components/CollectorObject';
 import { HubAd } from '@/app/components/HubAd';
-import { VERTICALS, LIVE_COUNT, LIVE_NAMES_PHRASE, SOON_NAMES_PHRASE } from '@/data/verticals';
+import { VERTICALS, LIVE_COUNT, LIVE_NAMES_PHRASE, SOON_NAMES_PHRASE, HERO_TITLE } from '@/data/verticals';
 
 export const metadata: Metadata = {
   title: 'GrailPulse — Collector Price Guides for Every Shelf',
@@ -49,7 +49,7 @@ export default function Home() {
                 <span className="gp-hero__dot" aria-hidden="true" />
                 The collector-price-guide network
               </p>
-              <h1 className="gp-hero__title">Know what belongs on every shelf.</h1>
+              <h1 className="gp-hero__title">{HERO_TITLE}</h1>
               <p className="gp-hero__lede">
                 Coins in the vault. Cars in the garage. Figures on the shelf. GrailPulse brings
                 each collection its own purpose-built guide and shows the evidence behind the number.

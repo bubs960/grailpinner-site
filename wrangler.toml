@@ -1,13 +1,8 @@
 # Cloudflare Pages config — GrailPulse hub
 # Static site: next.config.ts output:'export'. No Workers runtime, no ISR, no
 # queues, no Clerk. Deployed via `wrangler pages deploy out --project-name=grailpulse-hub`.
-# KV namespace ID: 81c7da102bea4362918fb0b5ec3c5b3a (GP_KV, created 2026-06-04)
 
 name = "grailpulse-hub"
 pages_build_output_dir = "out"
 compatibility_date = "2025-09-15"
 compatibility_flags = ["nodejs_compat", "enable_nodejs_process_v2"]
-
-[[kv_namespaces]]
-binding = "GP_KV"
-id = "81c7da102bea4362918fb0b5ec3c5b3a"

@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+import { VERTICALS, HERO_TITLE } from '@/data/verticals';
 
 // Build-time OG/social card. The opengraph-image convention auto-wires the
 // og:image + twitter:image meta tags, so no manual metadata wiring is needed.
@@ -47,11 +48,11 @@ export default function OpengraphImage() {
             letterSpacing: '-2px',
           }}
         >
-          Know what belongs on every shelf.
+          {HERO_TITLE}
         </div>
 
         <div style={{ fontSize: '28px', color: '#9aa6b6', marginTop: '40px' }}>
-          Coins · Die Cast · Figures · Games — evidence and methodology shown
+          {`${VERTICALS.map((v) => v.name).join(' · ')} — evidence and methodology shown`}
         </div>
       </div>
     ),

@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "traffic:pulse": "node scripts/grailpulse-traffic-pulse.mjs",
     "build:cf": "next build",
     "deploy": "npm run build && npx wrangler pages deploy out --project-name=grailpulse-hub"
@@ -15,10 +15,6 @@
     "next": "^15.5.15",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
-  },
-  "overrides": {
-    "@ast-grep/napi": "0.42.1",
-    "glob": "10.4.5"
   },
   "devDependencies": {
     "@types/node": "^22",

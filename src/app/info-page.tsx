@@ -6,8 +6,6 @@ type InfoShellProps = {
   eyebrow: string;
   title: string;
   lede: string;
-  /** Short label for the header breadcrumb (e.g. "Methodology"). */
-  crumb?: string;
   children: ReactNode;
 };
 
@@ -17,10 +15,10 @@ type InfoCardProps = {
   children: ReactNode;
 };
 
-export function InfoShell({ eyebrow, title, lede, crumb, children }: InfoShellProps) {
+export function InfoShell({ eyebrow, title, lede, children }: InfoShellProps) {
   return (
     <div className="gp-page">
-      <SiteHeader crumb={crumb} />
+      <SiteHeader />
 
       <main className="info-page">
         <div className="info-page__shell">

@@ -31,6 +31,9 @@ export type Vertical = {
   evidence: string;
 };
 
+/** The hub's hero H1 — shared with the OG/social card so the two can't drift. */
+export const HERO_TITLE = 'Know what belongs on every shelf.';
+
 export const VERTICALS: Vertical[] = [
   {
     key: 'coins',

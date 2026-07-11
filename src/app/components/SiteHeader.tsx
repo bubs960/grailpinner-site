@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
 // One sticky header for every page.
-// Pass `crumb` on interior pages to swap the nav links for a breadcrumb trail.
 // Server component — no client JS; the mobile collapse is pure CSS.
 
 const NAV = [
@@ -10,7 +9,7 @@ const NAV = [
   { label: 'Trust', href: '/trust' },
 ];
 
-export function SiteHeader({ crumb, hideCta }: { crumb?: string; hideCta?: boolean }) {
+export function SiteHeader() {
   return (
     <header className="gp-header">
       <div className="gp-header__inner">
@@ -22,27 +21,17 @@ export function SiteHeader({ crumb, hideCta }: { crumb?: string; hideCta?: boole
           </span>
         </Link>
 
-        {crumb ? (
-          <nav className="gp-header__crumbs" aria-label="Breadcrumb">
-            <Link href="/">Home</Link>
-            <span className="gp-header__sep" aria-hidden="true">/</span>
-            <span aria-current="page">{crumb}</span>
-          </nav>
-        ) : (
-          <nav className="gp-header__nav" aria-label="Main">
-            {NAV.map((link) => (
-              <Link key={link.href} href={link.href} className="gp-header__link">
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        )}
+        <nav className="gp-header__nav" aria-label="Main">
+          {NAV.map((link) => (
+            <Link key={link.href} href={link.href} className="gp-header__link">
+              {link.label}
+            </Link>
+          ))}
+        </nav>
 
-        {hideCta ? null : (
-          <Link href="/verticals" className="gp-header__cta">
-            Browse the guides
-          </Link>
-        )}
+        <Link href="/verticals" className="gp-header__cta">
+          Browse the guides
+        </Link>
       </div>
     </header>
   );
