@@ -13,7 +13,7 @@ const outfit = Outfit({
 
 const SITE_URL = 'https://grailpulse.com';
 const SITE_DESC =
-  'Collector price guides for coins, die cast, and action figures, built from source-fit market evidence with each guide’s methodology shown clearly.';
+  'Collector price guides for coins, die cast, and figures, built from source-fit market evidence with each guide’s methodology shown clearly.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -76,6 +76,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={outfit.variable}>
+      <head>
+        <link rel="preconnect" href="https://coins.grailpulse.com" />
+        <link rel="preconnect" href="https://diecast.grailpulse.com" />
+        <link rel="preconnect" href="https://figurepinner.com" />
+      </head>
       <body>
         <JsonLd data={organizationSchema} />
         <JsonLd data={websiteSchema} />

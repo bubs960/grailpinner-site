@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Script from 'next/script';
 
 const BANNER_KEY = '5f4b07f4ab1038d99bfe79351c5743a0';
 
@@ -40,7 +41,10 @@ export function HubAd() {
 };`,
           }}
         />
-        <script src={`https://www.highperformanceformat.com/${BANNER_KEY}/invoke.js`} />
+        <Script
+          src={`https://www.highperformanceformat.com/${BANNER_KEY}/invoke.js`}
+          strategy="lazyOnload"
+        />
       </div>
     </aside>
   );

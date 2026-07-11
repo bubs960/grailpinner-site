@@ -20,9 +20,9 @@ export default function TrustPage() {
       <InfoGrid>
         <InfoCard kicker="Where prices come from" title="The evidence is named">
           <p>
-            Figure and die-cast guides use completed public sales where available. CoinSpinner uses
-            published-guide estimates with grade and source context. We do not describe one evidence type
-            as another.
+            Figure guides use completed public sold comps where available. Die-cast guides use modeled seed
+            estimates with casting and condition context. CoinSpinner uses published-guide estimates with
+            grade and source context. We do not describe one evidence type as another.
           </p>
         </InfoCard>
 

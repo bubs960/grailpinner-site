@@ -37,7 +37,7 @@ export function LaneCard({ v }: { v: Vertical }) {
   );
 
   return live && v.href ? (
-    <a className="gp-lane" href={v.href} style={accentStyle}>
+    <a className="gp-lane" href={v.href} rel="sponsored nofollow" style={accentStyle}>
       {inner}
     </a>
   ) : (

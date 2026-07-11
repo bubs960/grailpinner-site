@@ -4,7 +4,7 @@ import { InfoCard, InfoGrid, InfoShell } from '../info-page';
 export const metadata: Metadata = {
   title: 'Privacy',
   description:
-    'Privacy on the GrailPulse hub: no logins, no stored collections; standard request logs and Google AdSense. Your collection lives on each individual guide.',
+    'Privacy on the GrailPulse hub: no logins, no stored collections; standard request logs and third-party ads. Your collection lives on each individual guide.',
   alternates: {
     canonical: '/privacy',
   },
@@ -21,8 +21,8 @@ export default function PrivacyPage() {
         <InfoCard title="What this hub collects">
           <p>
             Almost nothing. This site has no accounts and stores no collection data. We serve ads through
-            Google AdSense, which may set cookies as described in Google&rsquo;s policies, and standard
-            request logs may record basic data for security and performance.
+            Adsterra, a third-party ad network that may set cookies as described in its policies, and
+            standard request logs may record basic data for security and performance.
           </p>
         </InfoCard>
 
@@ -35,8 +35,8 @@ export default function PrivacyPage() {
 
         <InfoCard title="Cookies and ads">
           <p>
-            The main third party on this hub is Google AdSense. You can manage ad personalization through
-            Google&rsquo;s ad settings and your browser&rsquo;s own cookie controls.
+            The main third party on this hub is Adsterra. You can manage ad personalization through your
+            browser&rsquo;s own cookie controls.
           </p>
         </InfoCard>
 

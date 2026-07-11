@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Build-time date so the sitemap reflects each deploy rather than a frozen literal.
   const lastModified = new Date();
   return PAGES.map(({ path, changeFrequency, priority }) => ({
-    url: `${baseUrl}${path}`,
+    url: path === '/' ? `${baseUrl}/` : `${baseUrl}${path}/`,
     lastModified,
     changeFrequency,
     priority,

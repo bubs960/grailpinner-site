@@ -20,9 +20,10 @@ export default function MethodologyPage() {
       <InfoGrid>
         <InfoCard kicker="Step 01" title="We start with source-fit evidence">
           <p>
-            Figure and die-cast guides lean on completed public sales. CoinSpinner combines published-guide
-            estimates with grade, melt, and source context. The source is identified so you know what kind
-            of number you are reading.
+            Figure guides lean on completed public sold comps. Die-cast guides use modeled seed estimates
+            with casting and condition context. CoinSpinner combines published-guide estimates with grade,
+            melt, and source context. The source is identified so you know what kind of number you are
+            reading.
           </p>
         </InfoCard>
 
