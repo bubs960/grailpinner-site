@@ -1,13 +1,13 @@
 # GrailPulse Traffic Pulse
 
-Generated: 2026-06-15T18:19:01.426Z
+Generated: 2026-07-11T12:59:34.211Z
 
 | Site | Status | Sitemap URLs | Source | Notes |
 | --- | --- | ---: | --- | --- |
 | GrailPulse | OK | 6 | local | None |
 | CoinSpinner | OK | 6131 | local | None |
-| GrailPulse Die Cast | OK | 4178 | local | None |
-| FigurePinner | OK | 22155 | source-fallback | live: 403 Forbidden |
+| GrailPulse Die Cast | OK | 143 | local | None |
+| FigurePinner | OK | 23126 | source-fallback | live: 403 Forbidden |
 
 ## IndexNow Queue
 
@@ -17,10 +17,7 @@ Queued URLs: 231
 
 ## Submission
 
-- https://grailpulse.com: 202 Accepted
-- https://coins.grailpulse.com: 202 Accepted
-- https://diecast.grailpulse.com: 202 Accepted
-- https://figurepinner.com: 202 Accepted
+- Not submitted in this run. Add `-- --submit-indexnow` after the key files are live.
 
 ## Next Operator Steps
 
