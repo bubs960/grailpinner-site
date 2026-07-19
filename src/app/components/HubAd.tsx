@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Script from 'next/script';
 
-const BANNER_KEY = '5f4b07f4ab1038d99bfe79351c5743a0';
+const BANNER_KEY = '217019052e306488340846c092cb5ab6';
 
 export function HubAd() {
   const slotRef = useRef<HTMLElement>(null);
@@ -35,8 +35,8 @@ export function HubAd() {
             __html: `atOptions = {
   'key' : '${BANNER_KEY}',
   'format' : 'iframe',
-  'height' : 60,
-  'width' : 468,
+  'height' : 250,
+  'width' : 300,
   'params' : {}
 };`,
           }}
