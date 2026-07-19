@@ -5,6 +5,7 @@ import { Footer } from '@/app/components/Footer';
 import { LaneCard } from '@/app/components/LaneCard';
 import { CollectorObject } from '@/app/components/CollectorObject';
 import { HubAd } from '@/app/components/HubAd';
+import { SocialBarAd } from '@/app/components/SocialBarAd';
 import { CollectorPulse } from '@/app/components/CollectorPulse';
 import type { Vertical } from '@/data/verticals';
 import {
@@ -75,6 +76,7 @@ export default function Home() {
   return (
     <div className="gp-page gp-home">
       <SiteHeader />
+      <SocialBarAd />
 
       <main>
         <section className="gp-hero">
