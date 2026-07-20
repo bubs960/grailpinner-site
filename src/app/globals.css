@@ -1121,15 +1121,11 @@ a.gp-pulse__chip-row:hover {
   width: 100%;
   height: 282px;
   margin: 2px auto clamp(38px, 5vw, 64px);
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-}
-
-.gp-hub-ad.is-filled {
-  display: flex;
 }
 
 .gp-hub-ad__label {
