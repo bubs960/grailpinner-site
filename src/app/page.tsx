@@ -19,8 +19,7 @@ import {
 
 export const metadata: Metadata = {
   title: 'GrailPulse — Collector Price Guides for Every Shelf',
-  description:
-    'Collector price guides for coins, die cast, and figures — priced from real sales and named sources, with the method shown on every guide.',
+  description: `Collector price guides for ${LIVE_NAMES_PHRASE} — priced from real sales and named sources, with the method shown on every guide.`,
   alternates: { canonical: '/' },
 };
 

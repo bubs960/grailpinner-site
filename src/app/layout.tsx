@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Outfit } from 'next/font/google';
 import './globals.css';
 import { JsonLd } from '@/app/components/JsonLd';
-import { LIVE_VERTICALS } from '@/data/verticals';
+import { LIVE_VERTICALS, LIVE_NAMES_PHRASE } from '@/data/verticals';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -12,8 +12,7 @@ const outfit = Outfit({
 });
 
 const SITE_URL = 'https://grailpulse.com';
-const SITE_DESC =
-  'Collector price guides for coins, die cast, and figures — priced from real sales and named sources, with the method shown on every guide.';
+const SITE_DESC = `Collector price guides for ${LIVE_NAMES_PHRASE} — priced from real sales and named sources, with the method shown on every guide.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
