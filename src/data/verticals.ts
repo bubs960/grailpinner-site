@@ -5,12 +5,13 @@
 // the roster can never drift out of sync (the way three hand-authored copies did
 // before). When a vertical goes live, flip its `status` here and nowhere else.
 //
-// Liveness verified 2026-06-22: coins / diecast / figures return 200;
-// games.grailpulse.com is not deployed yet (status 'soon', no outbound link).
+// Liveness verified 2026-07-23: coins / diecast / figures / games all return 200
+// (games.grailpulse.com went live 7/19 per Steve's confirmation — this file was
+// still stale, flipped 'soon' -> 'live' here).
 //
-// `count` values verified live 2026-07-10 against each vertical's own homepage
-// stat (coins.grailpulse.com, diecast.grailpulse.com, figurepinner.com) —
-// re-verify before reusing if this file is untouched for a long stretch.
+// `count` values verified live 2026-07-10 (coins/diecast/figures) and 2026-07-23
+// (games, from its own homepage stat) — re-verify before reusing if this file is
+// untouched for a long stretch.
 
 export type VerticalStatus = 'live' | 'soon';
 
@@ -91,11 +92,13 @@ export const VERTICALS: Vertical[] = [
     product: 'GrailGamer',
     room: 'Library',
     category: 'Retro & modern video games',
-    href: null,
-    status: 'soon',
+    href: 'https://games.grailpulse.com',
+    status: 'live',
     accent: '#4ade80',
     blurb: 'Nintendo made just 116 World Championships cartridges in 1990 — the rarest, most chased grail in NES history.',
-    evidence: 'Condition-aware market pricing in development',
+    evidence: 'Real sold data · condition-graded (Loose, CIB, Sealed)',
+    count: 44860,
+    countUnit: 'games',
   },
 ];
 
