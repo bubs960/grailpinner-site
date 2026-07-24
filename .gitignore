@@ -48,3 +48,6 @@ Thumbs.db
 # logs
 *.log
 npm-debug.log*
+
+# Claude Code session-local config (never committed; matches figurepinner-site + main repo convention)
+.claude/
