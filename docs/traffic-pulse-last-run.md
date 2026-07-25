@@ -1,13 +1,13 @@
 # GrailPulse Traffic Pulse
 
-Generated: 2026-07-11T12:59:34.211Z
+Generated: 2026-07-25T03:21:38.110Z
 
 | Site | Status | Sitemap URLs | Source | Notes |
 | --- | --- | ---: | --- | --- |
 | GrailPulse | OK | 6 | local | None |
 | CoinSpinner | OK | 6131 | local | None |
 | GrailPulse Die Cast | OK | 143 | local | None |
-| FigurePinner | OK | 23126 | source-fallback | live: 403 Forbidden |
+| FigurePinner | OK | 23045 | source-fallback | live: 403 Forbidden |
 
 ## IndexNow Queue
 

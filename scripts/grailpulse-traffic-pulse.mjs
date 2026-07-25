@@ -128,6 +128,66 @@ async function diecastFallbackUrls(site) {
   ]
 }
 
+// ── FigurePinner URL-form rules (2026-07-24) ─────────────────────────────────
+// MUST MIRROR figurepinner-site/src/data/kbTypes.ts:158-178 (SLUG_TO_FANDOM /
+// genreSlugForFandom), NECA_FANDOMS in src/lib/genreFigures.ts:21, and the
+// GENRE_META key set in src/app/[genre]/page.tsx:20-108.
+//
+// WHY: every URL emitted for figurepinner.com must use the GENRE-SLUG form.
+// Emitting the raw KB `fandom` field mints a duplicate namespace with no hub
+// and no internal links — the 2026-07 index collapse (22K→6K), see
+// kbTypes.ts:150-156 and Bridge/WEBAUDIT-TO-WEB-GOOGLE-ZERO-ROOTCAUSE-2026-07-12.md.
+//
+// These three tables are a REPLICATION of another repo's source of truth and
+// will silently drift if that repo changes. assertFigurePinnerUrlForms() below
+// fails the run loudly if the KB grows a fandom this file doesn't know about.
+const FP_FANDOM_TO_GENRE_SLUG = {
+  'tmnt': 'teenage-mutant-ninja-turtles',
+  'gi-joe': 'gijoe',
+  'marvel-comics': 'marvel',
+  'dungeons-dragons': 'dungeons-and-dragons',
+}
+// NECA-rollup fandoms have no hub of their own; they live under /neca.
+const FP_NECA_ROLLUP = new Set(['horror', 'aliens-predator', 'terminator', 'robocop'])
+// Genre hubs that actually exist as routes (GENRE_META keys). A fandom that
+// maps to nothing here has NO hub page — emitting /<fandom> for it is a 404.
+const FP_GENRE_HUBS = new Set([
+  'action-force', 'dc', 'dungeons-dragons', 'ghostbusters', 'gijoe',
+  'indiana-jones', 'marvel', 'masters-of-the-universe', 'mythic-legions',
+  'neca', 'power-rangers', 'spawn', 'star-wars',
+  'teenage-mutant-ninja-turtles', 'thundercats', 'transformers', 'wrestling',
+])
+
+// Genre slug for figure and line URLs (identity for most fandoms).
+function fpGenreSlug(fandom) {
+  return FP_FANDOM_TO_GENRE_SLUG[fandom] ?? fandom
+}
+
+// Hub slug for top-level /<genre> URLs, or null when the fandom has no hub.
+// generic-fantasy, pop-culture and scifi are real KB fandoms with no hub route;
+// they must be dropped, not emitted. genreSlugForFandom() alone does NOT cover
+// this — it is an alias map, not a route-existence check.
+function fpHubSlug(fandom) {
+  if (FP_NECA_ROLLUP.has(fandom)) return 'neca'
+  const slug = fpGenreSlug(fandom)
+  return FP_GENRE_HUBS.has(slug) ? slug : null
+}
+
+// Loud failure if the KB grows a fandom whose hub mapping is unknown here.
+// Silent drift in these tables is exactly how the 7/12 defect class recurs.
+function assertFigurePinnerUrlForms(fandoms) {
+  const unmapped = fandoms.filter(f => fpHubSlug(f) === null)
+  const known = new Set(['generic-fantasy', 'pop-culture', 'scifi'])
+  const surprising = unmapped.filter(f => !known.has(f))
+  if (surprising.length) {
+    throw new Error(
+      `[traffic-pulse] FigurePinner KB has fandom(s) with no known genre hub: ${surprising.join(', ')}. ` +
+      `Update FP_GENRE_HUBS / FP_NECA_ROLLUP in this file against ` +
+      `figurepinner-site/src/app/[genre]/page.tsx GENRE_META before running.`,
+    )
+  }
+}
+
 async function figureFallbackUrls(site) {
   const kbPath = path.join(site.repoPath, 'src', 'data', 'figures-reference-v2.slim.js')
   if (!existsSync(kbPath)) return []
@@ -141,10 +201,16 @@ async function figureFallbackUrls(site) {
       ? context.module.exports.FIGURES_V2
       : []
   const fandoms = [...new Set(figures.map(figure => figure.fandom).filter(Boolean))]
+  assertFigurePinnerUrlForms(fandoms)
+
   const lineUrls = new Set()
   const prettyCounts = new Map()
   for (const figure of figures) {
-    if (figure.fandom && figure.product_line) lineUrls.add(`${site.baseUrl}/${figure.fandom}/${figure.product_line}`)
+    if (figure.fandom && figure.product_line) {
+      lineUrls.add(`${site.baseUrl}/${fpGenreSlug(figure.fandom)}/${figure.product_line}`)
+    }
+    // NOTE: the uniqueness KEY keeps the RAW fandom on purpose — it must mirror
+    // prettyFigureUrlKey() (kbTypes.ts:144-148). Only the emitted URL is slugged.
     const key = `${figure.fandom}/${figure.product_line}/${figure.character_canonical}`
     prettyCounts.set(key, (prettyCounts.get(key) ?? 0) + 1)
   }
@@ -152,19 +218,24 @@ async function figureFallbackUrls(site) {
   const figureUrls = figures.map(figure => {
     const key = `${figure.fandom}/${figure.product_line}/${figure.character_canonical}`
     if (prettyCounts.get(key) === 1) {
-      return `${site.baseUrl}/${figure.fandom}/${figure.product_line}/${figure.character_canonical}`
+      return `${site.baseUrl}/${fpGenreSlug(figure.fandom)}/${figure.product_line}/${figure.character_canonical}`
     }
     return `${site.baseUrl}/figure/${figure.figure_id}`
   })
 
+  // Hub URLs: slug-mapped and filtered to hubs that actually exist. Fandoms with
+  // no hub route (generic-fantasy, pop-culture, scifi) are dropped, and the four
+  // NECA-rollup fandoms collapse onto /neca — hence the dedupe.
+  const hubUrls = [...new Set(fandoms.map(fpHubSlug).filter(Boolean))]
+    .map(slug => `${site.baseUrl}/${slug}`)
+
   return [
     `${site.baseUrl}`,
     `${site.baseUrl}/search`,
-    `${site.baseUrl}/news`,
     `${site.baseUrl}/about`,
     `${site.baseUrl}/privacy`,
     `${site.baseUrl}/terms`,
-    ...fandoms.map(fandom => `${site.baseUrl}/${fandom}`),
+    ...hubUrls,
     ...lineUrls,
     ...figureUrls,
   ]
