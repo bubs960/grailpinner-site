@@ -1,6 +1,6 @@
 # Cloudflare Pages config — GrailPulse hub
 # Static site: next.config.ts output:'export'. No Workers runtime, no ISR, no
-# queues, no Clerk. Deployed via `wrangler pages deploy out --project-name=grailpulse-hub`.
+# queues, no Clerk. PARKED 2026-10-29: deploys `park/` via `npx wrangler pages deploy park --project-name=grailpulse-hub --branch=main` (npm run deploy). Un-park = tag parked-2026-10-29, build, deploy `out`.
 
 name = "grailpulse-hub"
 pages_build_output_dir = "park"  # PARKED 2026-10-29: coming-soon bundle; un-park = redeploy tag parked-2026-10-29 (output dir "out")

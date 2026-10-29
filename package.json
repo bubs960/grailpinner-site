@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "traffic:pulse": "node scripts/grailpulse-traffic-pulse.mjs",
     "build:cf": "next build",
-    "deploy": "npm run build && npx wrangler pages deploy out --project-name=grailpulse-hub"
+    "deploy": "npx wrangler pages deploy park --project-name=grailpulse-hub --branch=main"
   },
   "dependencies": {
     "next": "^15.5.15",
