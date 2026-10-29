@@ -3,6 +3,6 @@
 # queues, no Clerk. Deployed via `wrangler pages deploy out --project-name=grailpulse-hub`.
 
 name = "grailpulse-hub"
-pages_build_output_dir = "out"
+pages_build_output_dir = "park"  # PARKED 2026-10-29: coming-soon bundle; un-park = redeploy tag parked-2026-10-29 (output dir "out")
 compatibility_date = "2025-09-15"
 compatibility_flags = ["nodejs_compat", "enable_nodejs_process_v2"]
